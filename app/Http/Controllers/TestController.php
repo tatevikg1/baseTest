@@ -2,16 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\TestRequest;
 use Luezoid\Laravelcore\Http\Controllers\ApiController;
 
 
 class TestController extends ApiController
 {
-    //
-
-    public function test()
+    public function test(TestRequest $request)
     {
-        return true;
+        return $request->validated();
     }
 }

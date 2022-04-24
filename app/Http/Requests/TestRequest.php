@@ -2,8 +2,6 @@
 
 namespace App\Http\Requests;
 
-use Luezoid\Laravelcore\Requests\BaseRequest;
-
 class TestRequest extends BaseRequest
 {
     /**
@@ -14,7 +12,33 @@ class TestRequest extends BaseRequest
     public function rules()
     {
         return [
-            //
+            "name" => "required|min:5",
+            "far" => "required|min:5"
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'name.required' => 'A :attribute is required',
+            'name.min' => 'A :attribute is required',
+        ];
+    }
+
+    /**
+     * Get custom attributes for validator errors.
+     *
+     * @return array
+     */
+    public function attributes()
+    {
+        return [
+            'name' => 'email address',
         ];
     }
 }
