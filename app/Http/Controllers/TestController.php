@@ -10,6 +10,6 @@ class TestController extends ApiController
     
     public function test(TestRequest $request)
     {
-        return "somethig in master";
+        return "new branch commit";
     }
 }   
